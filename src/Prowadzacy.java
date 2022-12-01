@@ -12,6 +12,11 @@ public class Prowadzacy {
 
     }
 
+    public String wypiszNazweProwadzacego()
+    {
+        return tytul+" "+imie+" "+nazwisko;
+    }
+
     public String getImie() {
         return imie;
     }

@@ -4,18 +4,23 @@ public class Kurs {
     private String nazwaKursu;
     private int liczbaMiejsc;
     private ArrayList<Student> listaStudentow;
-    private int dzienTygodnia;
+    private String dzienTygodnia;
     private String termin;
     private Prowadzacy prowadzacy;
 
 
-    public Kurs(String nazwaKursu, int liczbaMiejsc, int dzienTygodnia, String termin, String imieProwadzacego, String nazwiskoProwadzacego, String tytul, int numerLegitymacji) {
+    public Kurs(String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, String imieProwadzacego, String nazwiskoProwadzacego, String tytul, int numerLegitymacji) {
         this.nazwaKursu = nazwaKursu;
         this.liczbaMiejsc = liczbaMiejsc;
         this.listaStudentow = new ArrayList<>();
         this.dzienTygodnia = dzienTygodnia;
         this.termin = termin;
         this.prowadzacy = new Prowadzacy(imieProwadzacego, nazwiskoProwadzacego, tytul, numerLegitymacji);
+    }
+
+    public void wyswietlInformacjeOKursie()
+    {
+        System.out.println(nazwaKursu+" | "+dzienTygodnia+" "+termin+" | "+"Prowadzący "+prowadzacy.wypiszNazweProwadzacego());
     }
 
     public Prowadzacy getProwadzacy() {
@@ -50,11 +55,11 @@ public class Kurs {
         this.listaStudentow = listaStudentow;
     }
 
-    public int getDzienTygodnia() {
+    public String getDzienTygodnia() {
         return dzienTygodnia;
     }
 
-    public void setDzienTygodnia(int dzienTygodnia) {
+    public void setDzienTygodnia(String dzienTygodnia) {
         this.dzienTygodnia = dzienTygodnia;
     }
 
