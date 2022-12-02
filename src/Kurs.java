@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class Kurs {
     private int idKursu;
     private String nazwaKursu;
     private int liczbaMiejsc;
-    private ArrayList<Student> listaStudentow;
+    private TreeMap<Integer, Student> listaStudentow;
     private String dzienTygodnia;
     private String termin;
     private Prowadzacy prowadzacy;
@@ -14,7 +15,7 @@ public class Kurs {
         this.idKursu=idKursu;
         this.nazwaKursu = nazwaKursu;
         this.liczbaMiejsc = liczbaMiejsc;
-        this.listaStudentow = new ArrayList<>();
+        this.listaStudentow = new TreeMap<>();
         this.dzienTygodnia = dzienTygodnia;
         this.termin = termin;
         this.prowadzacy = new Prowadzacy(imieProwadzacego, nazwiskoProwadzacego, tytul, numerLegitymacji);
@@ -28,6 +29,8 @@ public class Kurs {
     public Prowadzacy getProwadzacy() {
         return prowadzacy;
     }
+
+
 
     public void setProwadzacy(String imie, String nazwisko, String tytul, int numerLegitymacji) {
         this.prowadzacy = new Prowadzacy(imie, nazwisko, tytul, numerLegitymacji);
@@ -57,11 +60,11 @@ public class Kurs {
         this.liczbaMiejsc = liczbaMiejsc;
     }
 
-    public ArrayList<Student> getListaStudentow() {
+    public TreeMap<Integer, Student> getListaStudentow() {
         return listaStudentow;
     }
 
-    public void setListaStudentow(ArrayList<Student> listaStudentow) {
+    public void setListaStudentow(TreeMap<Integer, Student> listaStudentow) {
         this.listaStudentow = listaStudentow;
     }
 
@@ -83,6 +86,29 @@ public class Kurs {
     public void addStudent(String imie, String nazwisko, int numerIndeksu)
     {
         Student nowyStudent = new Student(imie, nazwisko, numerIndeksu);
-        listaStudentow.add(nowyStudent);
+        listaStudentow.put(numerIndeksu, nowyStudent);
+        liczbaMiejsc--;
+    }
+
+    public void addStudent(Student student)
+    {
+        listaStudentow.put(student.getNumerIndeksu(), student);
+        liczbaMiejsc--;
+    }
+
+    public boolean szukajStudenta(int idStudenta)
+    {
+        return listaStudentow.containsKey(idStudenta);
+    }
+
+    public Student zwrocStudenta(int idStudenta)
+    {
+        return listaStudentow.get(idStudenta);
+    }
+
+    public void usunStudenta(Student student)
+    {
+        listaStudentow.remove(student.getNumerIndeksu());
+        liczbaMiejsc++;
     }
 }

@@ -2,11 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static int ID;
-    private static Aplikacja aplikacja;
-    static void initData() //funkcja wypełnia na starcie bazę przykładowymi wartościami
-    {
-        System.out.println("Wypełniam bazę początkowymi wartościami");
-    }
+    private static Aplikacja aplikacja = InitData.createSampleAplicationWithData();
+
 
     private static void printMainMenu()
     {
@@ -30,17 +27,43 @@ public class Main {
 
     public static void main(String[] args)
     {
-        aplikacja = new Aplikacja();
-        initData();
-
         System.out.println("\n\nWitaj w systemie zapisowym uczelni wyższej\n");
-
+        aplikacja.wyswietlKursy(0, true);
         System.out.println("Podaj swoje ID: ");
         Scanner input = new Scanner(System.in);
         ID = input.nextInt();
         do { //główna pętla programu
             printMainMenu();
-
+            int choice = input.nextInt();
+            if(ID==1) //opcje dla administratora
+            {
+                switch (choice)
+                {
+                    case 1:
+                        //printZarzadzajStudentemMenu();
+                        break;
+                    case 2:
+                        //printZarzadzajStudentemMenu();
+                        break;
+                }
+            }
+            else  //opcje dla studenta
+            {
+                switch (choice)
+                {
+                    case 1:
+                        aplikacja.wyswietlKursy(ID, true);//wyświetla wszystkie dostępne kursy
+                        break;
+                    case 2:
+                        aplikacja.wyswietlListeProwadzacych();
+                        break;
+                    case 3:
+                        //aplikacja.zapiszStudentaNaKurs(ID);
+                        break;
+                    case 4:
+                        aplikacja.wyswietlKursy(ID, false);//wyświetla kursy w których jest student
+                }
+            }
 
 
         }while(input.nextInt()!=0);
