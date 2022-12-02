@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Kurs {
+    private int idKursu;
     private String nazwaKursu;
     private int liczbaMiejsc;
     private ArrayList<Student> listaStudentow;
@@ -9,7 +10,8 @@ public class Kurs {
     private Prowadzacy prowadzacy;
 
 
-    public Kurs(String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, String imieProwadzacego, String nazwiskoProwadzacego, String tytul, int numerLegitymacji) {
+    public Kurs(int idKursu, String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, String imieProwadzacego, String nazwiskoProwadzacego, String tytul, int numerLegitymacji) {
+        this.idKursu=idKursu;
         this.nazwaKursu = nazwaKursu;
         this.liczbaMiejsc = liczbaMiejsc;
         this.listaStudentow = new ArrayList<>();
@@ -29,6 +31,14 @@ public class Kurs {
 
     public void setProwadzacy(String imie, String nazwisko, String tytul, int numerLegitymacji) {
         this.prowadzacy = new Prowadzacy(imie, nazwisko, tytul, numerLegitymacji);
+    }
+
+    public int getIdKursu() {
+        return idKursu;
+    }
+
+    public void setIdKursu(int idKursu) {
+        this.idKursu = idKursu;
     }
 
     public String getNazwaKursu() {
@@ -68,5 +78,11 @@ public class Kurs {
     }
     public void setTermin(String termin) {
         this.termin = termin;
+    }
+
+    public void addStudent(String imie, String nazwisko, int numerIndeksu)
+    {
+        Student nowyStudent = new Student(imie, nazwisko, numerIndeksu);
+        listaStudentow.add(nowyStudent);
     }
 }

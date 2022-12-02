@@ -12,7 +12,7 @@ public class Prowadzacy {
 
     }
 
-    public String wypiszNazweProwadzacego()
+    public String wypiszNazweProwadzacego()//funkcja zwraca w czytelnej formie pełną nazwę prowadzącego
     {
         return tytul+" "+imie+" "+nazwisko;
     }
