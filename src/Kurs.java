@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class Kurs {
@@ -83,20 +82,20 @@ public class Kurs {
         this.termin = termin;
     }
 
-    public void addStudent(String imie, String nazwisko, int numerIndeksu)
+    public void dodajStudentaDoListyKursu(String imie, String nazwisko, int numerIndeksu)
     {
         Student nowyStudent = new Student(imie, nazwisko, numerIndeksu);
         listaStudentow.put(numerIndeksu, nowyStudent);
         liczbaMiejsc--;
     }
 
-    public void addStudent(Student student)
+    public void dodajStudentaDoListyKursu(Student student)
     {
         listaStudentow.put(student.getNumerIndeksu(), student);
         liczbaMiejsc--;
     }
 
-    public boolean szukajStudenta(int idStudenta)
+    public boolean przeszukajListeStudentowKursu(int idStudenta)
     {
         return listaStudentow.containsKey(idStudenta);
     }
@@ -106,7 +105,7 @@ public class Kurs {
         return listaStudentow.get(idStudenta);
     }
 
-    public void usunStudenta(Student student)
+    public void usunStudentaZListyKursu(Student student)
     {
         listaStudentow.remove(student.getNumerIndeksu());
         liczbaMiejsc++;

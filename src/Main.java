@@ -4,7 +4,6 @@ public class Main {
     public static int ID;
     private static Aplikacja aplikacja = InitData.createSampleAplicationWithData();
 
-
     private static void printMainMenu()
     {
         System.out.println("Zalogowano jako ID: "+ID);

@@ -52,7 +52,7 @@ public class Aplikacja {
         Student student = new Student(imieStudenta, nazwiskoStudenta, numerIndeksu);
         studenciNaUczelni.add(student);
         Kurs tempKurs = zwrocKurs(idKursu);
-        tempKurs.addStudent(student);
+        tempKurs.dodajStudentaDoListyKursu(student);
         listaKursow.replace(idKursu,tempKurs);
     }
     
@@ -66,7 +66,7 @@ public class Aplikacja {
         }
         Kurs tempKursOUT = zwrocKurs(idOUT);
         //sprawdzenie czy student jest zapisany na kurs z którego chcemy go wypisać
-        if(!tempKursOUT.szukajStudenta(idStudenta))
+        if(!tempKursOUT.przeszukajListeStudentowKursu(idStudenta))
         {
             System.out.println("Ten student nie jest zapisany na kurs z którego chcesz go wypisać");
             return;
@@ -74,7 +74,7 @@ public class Aplikacja {
         Kurs tempKursIN = zwrocKurs(idIN);
 
         //sprawdzenie czy na kursie są jeszcze miejsca oraz czy student nie jest już tam zapisany
-        if(tempKursIN.szukajStudenta(idStudenta))
+        if(tempKursIN.przeszukajListeStudentowKursu(idStudenta))
         {
             System.out.println("Ten student już jest zapisany na ten kurs");
             return;
@@ -88,8 +88,8 @@ public class Aplikacja {
 
         //jeśli wszystko spełnione to wywołanie usunięcia studenta z jednego kursu i dopisania go do drugiego
         Student przenoszonyStudent = tempKursOUT.zwrocStudenta(idStudenta);
-        tempKursOUT.usunStudenta(przenoszonyStudent);
-        tempKursIN.addStudent(przenoszonyStudent);
+        tempKursOUT.usunStudentaZListyKursu(przenoszonyStudent);
+        tempKursIN.dodajStudentaDoListyKursu(przenoszonyStudent);
         listaKursow.replace(idOUT,tempKursOUT);
         listaKursow.replace(idIN,tempKursIN);
     }

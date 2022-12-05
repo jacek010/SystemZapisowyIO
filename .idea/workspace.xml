@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d44e2461-bdd7-4fef-9cd8-2132158a286e" name="Changes" comment="Dodane podstawowe menu">
-      <change afterPath="$PROJECT_DIR$/src/InitData.java" afterDir="false" />
+    <list default="true" id="d44e2461-bdd7-4fef-9cd8-2132158a286e" name="Changes" comment="Dodane podstawowe funkcje">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aplikacja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aplikacja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kurs.java" afterDir="false" />
@@ -119,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669895241976</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Dodane podstawowe funkcje">
+      <created>1670020407780</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670020407780</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,17 +144,7 @@
     <MESSAGE value="Create Kurs class" />
     <MESSAGE value="Stworzony szkielet aplikacji, zdefiniowane podstawowe klasy" />
     <MESSAGE value="Dodane podstawowe menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodane podstawowe menu" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/InitData.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Dodane podstawowe funkcje" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodane podstawowe funkcje" />
   </component>
 </project>
