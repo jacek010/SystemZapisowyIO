@@ -24,16 +24,35 @@ public class Main {
         System.out.println("0. ZAKOŃCZ działanie programu");
     }
 
+    private static void printAdminMenu(int option)
+    {
+        switch (option)
+        {
+            case 1:
+
+                break;
+
+            case 2:
+
+                break;
+
+            default:
+                System.out.println("Takiej opcji nie ma!");
+                break;
+        }
+    }
+
     public static void main(String[] args)
     {
         System.out.println("\n\nWitaj w systemie zapisowym uczelni wyższej\n");
         aplikacja.wyswietlKursy(0, true);
         System.out.println("Podaj swoje ID: ");
         Scanner input = new Scanner(System.in);
+        int choice;
         ID = input.nextInt();
         do { //główna pętla programu
             printMainMenu();
-            int choice = input.nextInt();
+            choice = input.nextInt();
             if(ID==1) //opcje dla administratora
             {
                 switch (choice)
@@ -51,21 +70,27 @@ public class Main {
                 switch (choice)
                 {
                     case 1:
+                        System.out.println("Kursy, na które możesz się zapisać: ");
                         aplikacja.wyswietlKursy(ID, true);//wyświetla wszystkie dostępne kursy
                         break;
                     case 2:
+                        System.out.println("Prowadzący na naszej uczelni: ");
                         aplikacja.wyswietlListeProwadzacych();
                         break;
                     case 3:
                         //aplikacja.zapiszStudentaNaKurs(ID);
                         break;
                     case 4:
+                        System.out.println("Kursy, na które jesteś zapisany: ");
                         aplikacja.wyswietlKursy(ID, false);//wyświetla kursy w których jest student
+                        break;
+                    default:
+                        break;
                 }
             }
 
 
-        }while(input.nextInt()!=0);
+        }while(choice!=0);
         System.out.println("Zapraszamy ponownie!");
     }
 }

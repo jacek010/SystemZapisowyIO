@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Consumer;
 
 public class Aplikacja {
 
@@ -26,7 +27,7 @@ public class Aplikacja {
                 //wyświetlanie studenta
                 if(czyWszystkie)
                 {
-                    if(entry.getValue().getLiczbaMiejsc()>0)System.out.printf("| %-10s | %25s | %25s | %40s | %25s |%n",entry.getValue().getIdKursu(), entry.getValue().getNazwaKursu(), entry.getValue().getDzienTygodnia()+" "+entry.getValue().getTermin(), entry.getValue().getProwadzacy().wypiszNazweProwadzacego(), entry.getValue().getLiczbaMiejsc());
+                    if(entry.getValue().getLiczbaMiejsc()>0&&!entry.getValue().getListaStudentow().containsKey(ID))System.out.printf("| %-10s | %25s | %25s | %40s | %25s |%n",entry.getValue().getIdKursu(), entry.getValue().getNazwaKursu(), entry.getValue().getDzienTygodnia()+" "+entry.getValue().getTermin(), entry.getValue().getProwadzacy().wypiszNazweProwadzacego(), entry.getValue().getLiczbaMiejsc());
                 }
                 else
                 {
@@ -45,6 +46,18 @@ public class Aplikacja {
 
     public void wyswietlListeProwadzacych()
     {
+        Set<String> listaProwadzacychKursy = new HashSet<>();
+        for(var entry : listaKursow.entrySet())
+        {
+            listaProwadzacychKursy.add(entry.getValue().getProwadzacy().wypiszNazweProwadzacego());
+        }
+
+        listaProwadzacychKursy.forEach(new Consumer<String>() {
+            @Override
+            public void accept(String prowadzacy) {
+                System.out.println(prowadzacy);
+            }
+        });
 
     }
     public void dopiszStudenta(int idKursu, String imieStudenta, String nazwiskoStudenta, int numerIndeksu)
