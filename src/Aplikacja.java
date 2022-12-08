@@ -22,7 +22,7 @@ public class Aplikacja {
         System.out.printf("| %-10s | %25s | %25s | %40s | %25s |%n","ID KURSU", "NAZWA KURSU", "TERMIN", "PROWADZĄCY", "LICZBA DOSTĘPNYCH MIEJSC");
         System.out.printf("| %-10s | %25s | %25s | %40s | %25s |%n","---------", "-------------------------", "-------------------------", "----------------------------------------", "-------------------------");
         for (var entry : listaKursow.entrySet()) {
-            if(ID!=0)
+            if(ID!=1)
             {
                 //wyświetlanie studenta
                 if(czyWszystkie)
@@ -77,22 +77,20 @@ public class Aplikacja {
             System.out.println("Podano nieprawidłowe ID kursu, operacja przeniesienia nie została wykonana");
             return;
         }
-        Kurs tempKursOUT = zwrocKurs(idOUT);
         //sprawdzenie czy student jest zapisany na kurs z którego chcemy go wypisać
-        if(!tempKursOUT.przeszukajListeStudentowKursu(idStudenta))
+        if(!listaKursow.get(idOUT).przeszukajListeStudentowKursu(idStudenta))
         {
             System.out.println("Ten student nie jest zapisany na kurs z którego chcesz go wypisać");
             return;
         }
-        Kurs tempKursIN = zwrocKurs(idIN);
 
         //sprawdzenie czy na kursie są jeszcze miejsca oraz czy student nie jest już tam zapisany
-        if(tempKursIN.przeszukajListeStudentowKursu(idStudenta))
+        if(listaKursow.get(idIN).przeszukajListeStudentowKursu(idStudenta))
         {
             System.out.println("Ten student już jest zapisany na ten kurs");
             return;
         }
-        if (tempKursIN.getLiczbaMiejsc()<1)
+        if (listaKursow.get(idIN).getLiczbaMiejsc()<1)
         {
             System.out.println("Na tym kursie nie ma już miejsc");
             return;
@@ -100,11 +98,9 @@ public class Aplikacja {
 
 
         //jeśli wszystko spełnione to wywołanie usunięcia studenta z jednego kursu i dopisania go do drugiego
-        Student przenoszonyStudent = tempKursOUT.zwrocStudenta(idStudenta);
-        tempKursOUT.usunStudentaZListyKursu(przenoszonyStudent);
-        tempKursIN.dodajStudentaDoListyKursu(przenoszonyStudent);
-        listaKursow.replace(idOUT,tempKursOUT);
-        listaKursow.replace(idIN,tempKursIN);
+        Student przenoszonyStudent = listaKursow.get(idOUT).zwrocStudenta(idStudenta);
+        listaKursow.get(idOUT).usunStudentaZListyKursu(przenoszonyStudent);
+        listaKursow.get(idIN).dodajStudentaDoListyKursu(przenoszonyStudent);
     }
     
     public boolean szukajKursu(int idKursu)
