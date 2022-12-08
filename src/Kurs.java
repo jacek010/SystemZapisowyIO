@@ -11,13 +11,24 @@ public class Kurs {
 
 
     public Kurs(int idKursu, String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, String imieProwadzacego, String nazwiskoProwadzacego, String tytul, int numerLegitymacji) {
-        this.idKursu=idKursu;
+        this.idKursu = idKursu;
         this.nazwaKursu = nazwaKursu;
         this.liczbaMiejsc = liczbaMiejsc;
         this.listaStudentow = new TreeMap<>();
         this.dzienTygodnia = dzienTygodnia;
         this.termin = termin;
         this.prowadzacy = new Prowadzacy(imieProwadzacego, nazwiskoProwadzacego, tytul, numerLegitymacji);
+    }
+
+
+    public Kurs(int idKursu, String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, Prowadzacy prowadzacy) {
+        this.idKursu = idKursu;
+        this.nazwaKursu = nazwaKursu;
+        this.liczbaMiejsc = liczbaMiejsc;
+        this.listaStudentow = new TreeMap<>();
+        this.dzienTygodnia = dzienTygodnia;
+        this.termin = termin;
+        this.prowadzacy = prowadzacy;
     }
 
     public void wyswietlInformacjeOKursie()
