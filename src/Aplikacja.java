@@ -4,16 +4,22 @@ import java.util.function.Consumer;
 public class Aplikacja {
 
     private TreeMap<Integer, Kurs> listaKursow;
+    private TreeMap<Integer, Prowadzacy> listaProwadzacych;
     private Set<Student> studenciNaUczelni;
     public Aplikacja() {
-        this.listaKursow = new TreeMap<Integer, Kurs>() {
-        };
+        this.listaKursow = new TreeMap<Integer, Kurs>() {};
         this.studenciNaUczelni= new HashSet<>();
+        this.listaProwadzacych = new TreeMap<Integer, Prowadzacy>() {};
     }
 
     public void dodajKurs(int idKursu, String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, String imieProwadzacego, String nazwiskoProwadzacego, String tytul, int numerLegitymacji)
     {
         Kurs nowyKurs = new Kurs(idKursu, nazwaKursu,liczbaMiejsc, dzienTygodnia, termin, imieProwadzacego, nazwiskoProwadzacego, tytul, numerLegitymacji);
+        listaKursow.put(idKursu, nowyKurs);
+    }
+
+    public void dodajKurs(int idKursu, String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, Prowadzacy prowadzacy) {
+        Kurs nowyKurs = new Kurs(idKursu, nazwaKursu, liczbaMiejsc, dzienTygodnia, termin, prowadzacy);
         listaKursow.put(idKursu, nowyKurs);
     }
 
@@ -42,6 +48,11 @@ public class Aplikacja {
             if(entry.getValue().getLiczbaMiejsc()<1|| !czyWszystkie)continue;
 
         }
+    }
+
+    public void dodajProwadzacego(String imie, String nazwisko, String tytul, int numerLegitymacji) {
+        Prowadzacy nowyProwadzacy = new Prowadzacy(imie, nazwisko, tytul, numerLegitymacji);
+        listaProwadzacych.put(numerLegitymacji, nowyProwadzacy);
     }
 
     public void wyswietlListeProwadzacych()
@@ -112,6 +123,8 @@ public class Aplikacja {
     {
         return listaKursow.get(idKursu);
     }
+
+    public Prowadzacy getProwadzacy(int numerLegitymacji) { return listaProwadzacych.get(numerLegitymacji); }
 
     public void usunKurs(int idKursu)
     {
