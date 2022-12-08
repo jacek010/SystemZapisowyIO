@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d44e2461-bdd7-4fef-9cd8-2132158a286e" name="Changes" comment="Dodane wyświeylanie lity prowadzących">
-      <change afterPath="$PROJECT_DIR$/SystemZapisowyIO.vpdm/Class Diagram1.vpd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aplikacja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aplikacja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="d44e2461-bdd7-4fef-9cd8-2132158a286e" name="Changes" comment="Od teraz można się przelogować&#10;1 - ID admina&#10;0 - wylogowuje lub konczy program" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +31,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1669991965" />
+                    <option name="lastUsedInstant" value="1670499032" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="update_jacek" />
+                    <option name="lastUsedInstant" value="1670498870" />
                   </RecentBranch>
                 </list>
               </option>
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670405942842</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Od teraz można się przelogować&#10;1 - ID admina&#10;0 - wylogowuje lub konczy program">
+      <created>1670498691962</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670498691962</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,7 +153,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -160,6 +178,7 @@
     <MESSAGE value="Dodane podstawowe menu" />
     <MESSAGE value="Dodane podstawowe funkcje" />
     <MESSAGE value="Dodane wyświeylanie lity prowadzących" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodane wyświeylanie lity prowadzących" />
+    <MESSAGE value="Od teraz można się przelogować&#10;1 - ID admina&#10;0 - wylogowuje lub konczy program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Od teraz można się przelogować&#10;1 - ID admina&#10;0 - wylogowuje lub konczy program" />
   </component>
 </project>
