@@ -24,18 +24,29 @@ public class Main {
 
     private static void printAdminMenu(int option) {
         switch (option) {
-            case 1:
-
+            case 1://lista opcji do zarządzania studentem
+                System.out.println("\t1. Dodaj studenta do kursu");
+                System.out.println("\t2. Usun studenta z kursu");
+                System.out.println("\t3. Przenies studenta między kursami");
                 break;
 
-            case 2:
+            case 2://lista opcji do zarządzania kursami
+                System.out.println("\t1. Dodaj kurs");
+                System.out.println("\t2. Wyświetl listę studentów zapisanych na kurs");
+                System.out.println("\t2. Przenieś studenta między kursami");
 
-                break;
 
-            default:
-                System.out.println("Takiej opcji nie ma!");
                 break;
         }
+    }
+    private static void zarzadzanieStudentem()
+    {
+
+    }
+
+    private static void zarzadzanieWszystkimiKursami()
+    {
+
     }
 
     public static void main(String[] args)
@@ -56,12 +67,15 @@ public class Main {
                 if (ID == 1) //opcje dla administratora
                 {
                     switch (choice) {
-                        case 1:
-                            //printZarzadzajStudentemMenu();
-                            break;
-                        case 2:
-                            //printZarzadzajStudentemMenu();
-                            break;
+                        case 1 -> {
+                            printAdminMenu(1);
+                            zarzadzanieStudentem();
+                        }
+                        case 2 -> {
+                            printAdminMenu(2);
+                            zarzadzanieWszystkimiKursami();
+                        }
+                        default -> System.out.println("Takiej opcji nie ma!");
                     }
                 } else  //opcje dla studenta
                 {
