@@ -113,7 +113,43 @@ public class Aplikacja {
         listaKursow.get(idOUT).usunStudentaZListyKursu(przenoszonyStudent);
         listaKursow.get(idIN).dodajStudentaDoListyKursu(przenoszonyStudent);
     }
-    
+
+    public void zapisStudentaNaKurs(int idStudenta)
+    {
+        this.wyswietlKursy(idStudenta, true);
+        int idKursu = wybierzKurs();
+        Kurs kurs = zwrocKurs(idKursu);
+        Student student = zwrocStudenta(idStudenta);
+        if (kurs.getPozostaleMiejsca() > 0 && !kurs.przeszukajListeStudentowKursu(idStudenta))
+        {
+            kurs.dodajStudentaDoListyKursu(student);
+            System.out.println("Pomyślnie zapisano studenta na kurs.");
+            return;
+        }
+        System.out.println("Nie udało się zapisać studenta na kurs.");
+    }
+
+    public int wybierzKurs()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj id kursu: ");
+        int idKursu = sc.nextInt();
+        return idKursu;
+    }
+
+    public Student zwrocStudenta(int idStudenta)
+    {
+        for (Iterator<Student> it = studenciNaUczelni.iterator(); it.hasNext();)
+        {
+            Student s = it.next();
+            if (s.getNumerIndeksu() == idStudenta)
+            {
+                return s;
+            }
+        }
+        return null;
+    }
+
     public boolean szukajKursu(int idKursu)
     {
         return listaKursow.containsKey(idKursu);

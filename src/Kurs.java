@@ -36,6 +36,11 @@ public class Kurs {
         System.out.println(nazwaKursu+" | "+dzienTygodnia+" "+termin+" | "+"Prowadzący "+prowadzacy.wypiszNazweProwadzacego());
     }
 
+    public int getPozostaleMiejsca()
+    {
+        return this.liczbaMiejsc - this.listaStudentow.size();
+    }
+
     public Prowadzacy getProwadzacy() {
         return prowadzacy;
     }
