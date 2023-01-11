@@ -126,4 +126,9 @@ public class Kurs {
         listaStudentow.remove(student.getNumerIndeksu());
         liczbaMiejsc++;
     }
+    public void usunStudentaZListyKursu(int idStudenta)
+    {
+        listaStudentow.remove(idStudenta);
+        liczbaMiejsc++;
+    }
 }

@@ -73,11 +73,29 @@ public class Aplikacja {
     }
     public void dopiszStudenta(int idKursu, String imieStudenta, String nazwiskoStudenta, int numerIndeksu)
     {
-        Student student = new Student(imieStudenta, nazwiskoStudenta, numerIndeksu);
-        studenciNaUczelni.add(student);
-        Kurs tempKurs = zwrocKurs(idKursu);
-        tempKurs.dodajStudentaDoListyKursu(student);
-        listaKursow.replace(idKursu,tempKurs);
+        if (listaKursow.get(idKursu).getPozostaleMiejsca() > 0 && !listaKursow.get(idKursu).przeszukajListeStudentowKursu(numerIndeksu))
+        {
+            Student student = new Student(imieStudenta, nazwiskoStudenta, numerIndeksu);
+            studenciNaUczelni.add(student);
+            listaKursow.get(idKursu).dodajStudentaDoListyKursu(student);
+            System.out.println("Pomyślnie zapisano studenta na kurs.");
+            return;
+        }
+        System.out.println("Nie udało się zapisać studenta na kurs.");
+    }
+
+    public void usunStudentaZKursu(int idKursu, int numerIndeksuStudenta)
+    {
+        if(!listaKursow.containsKey(idKursu)){
+            System.out.println("Nie ma kursu o takim ID!");
+            return ;
+        }
+        else if(!listaKursow.get(idKursu).przeszukajListeStudentowKursu(numerIndeksuStudenta))
+        {
+            System.out.println("Na tym kursie nie ma studenta o podanym numerze indeksu");
+        }
+        else
+        listaKursow.get(idKursu).usunStudentaZListyKursu(numerIndeksuStudenta);
     }
     
     public void przeniesStudenta(int idStudenta, int idOUT, int idIN)
