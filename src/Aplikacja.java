@@ -151,8 +151,7 @@ public class Aplikacja {
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Podaj id kursu: ");
-        int idKursu = sc.nextInt();
-        return idKursu;
+        return sc.nextInt();
     }
 
     public Student zwrocStudenta(int idStudenta)
