@@ -146,7 +146,7 @@ public class Main {
                             aplikacja.wyswietlListeProwadzacych();
                             break;
                         case 3:
-                            //aplikacja.zapiszStudentaNaKurs(ID);
+                            aplikacja.zapisStudentaNaKurs(ID);
                             break;
                         case 4:
                             System.out.println("Kursy, na które jesteś zapisany: ");
