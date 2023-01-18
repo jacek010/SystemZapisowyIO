@@ -156,11 +156,8 @@ public class Aplikacja {
 
     public Student zwrocStudenta(int idStudenta)
     {
-        for (Iterator<Student> it = studenciNaUczelni.iterator(); it.hasNext();)
-        {
-            Student s = it.next();
-            if (s.getNumerIndeksu() == idStudenta)
-            {
+        for (Student s : studenciNaUczelni) {
+            if (s.getNumerIndeksu() == idStudenta) {
                 return s;
             }
         }
