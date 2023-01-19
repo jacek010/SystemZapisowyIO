@@ -26,9 +26,10 @@ public class KursTest {
                 new Object[]{8,"Fizyka", 5, "Piątek", "17:15", "Katarzyna", "Szybka", "Profesor", 111333}
         };
     }
-    @BeforeClass
-    public static void SetUp(){
+    @Before
+    public void SetUp(){
 
+        System.out.println("www");
         kursy = new Kurs[2];
         kursy[0]=new Kurs(1,"Matematyka", 10, "Wtorek", "10:25TN","Jan" ,"Kowalski", "Doktor", 999999);
         kursy[1]=new Kurs(2,"Fizyka", 20, "Czwartek", "16:15TP","Anna" ,"Nowak", "Doktor", 888888);

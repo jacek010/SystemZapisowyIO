@@ -1,6 +1,7 @@
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +15,7 @@ public class ProwadzacyTest {
     @Before
     public void setUp() {
         dane = new Dane();
+        System.out.println("www");
     }
 
     @Test
@@ -22,12 +24,12 @@ public class ProwadzacyTest {
         System.out.println("createProwadzacy");
         for (int i = 0; i < 4; i++) {
             Prowadzacy prowadzacy = new Prowadzacy(
-                dane.daneProwadzacych[i][0],
-                dane.daneProwadzacych[i][1],
-                dane.daneProwadzacych[i][2],
-                Integer.parseInt(dane.daneProwadzacych[i][3])
+                Dane.daneProwadzacych[i][0],
+                Dane.daneProwadzacych[i][1],
+                Dane.daneProwadzacych[i][2],
+                Integer.parseInt(Dane.daneProwadzacych[i][3])
             );
-            assertEquals(dane.legitymacjeProwadzacych[i], prowadzacy.getNumerLegitymacji());
+            assertEquals(Dane.legitymacjeProwadzacych[i], prowadzacy.getNumerLegitymacji());
         }
     }
 
