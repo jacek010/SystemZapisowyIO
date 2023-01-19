@@ -1,14 +1,10 @@
-import org.junit.BeforeClass;
-import org.junit.FixMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.junit.runners.MethodSorters;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class AplikacjaTest {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class AplikacjaTest {
 
     static Dane dane;
     static Aplikacja instance;
@@ -17,15 +13,16 @@ public class AplikacjaTest {
     @Rule
     public ExpectedException exception = ExpectedException.none();
 
-    @BeforeClass
+    @BeforeAll
     public static void SetUp() {
+        System.out.println("Run aplikacja setup");
         instance = new Aplikacja();
         dane = new Dane();
         student = new Student("Andrzej", "Kowalski", 222222);
     }
 
-
     @Test
+    @Order(1)
     public void test1DodajKurs() {
         System.out.println("DodajKurs");
         instance.dodajKurs(1,"Analiza", 10,"Wtorek", "16:25 TN", "Jan", "Nowak", "doktor", 123456);
@@ -33,6 +30,7 @@ public class AplikacjaTest {
     }
 
     @Test
+    @Order(2)
     public void test2DodajStudenta() {
         System.out.println("DodajStudenta");
         instance.dopiszStudenta(1, student);
@@ -41,6 +39,7 @@ public class AplikacjaTest {
     }
 
     @Test
+    @Order(3)
     public void test3PrzeniesStudenta() {
         System.out.println("PrzeniesStudenta");
         assertEquals(instance.zwrocStudenta(222222), instance.zwrocKurs(1).zwrocStudenta(222222));
@@ -50,6 +49,7 @@ public class AplikacjaTest {
     }
 
     @Test
+    @Order(4)
     public void test4usunStudentaZKursu() {
         System.out.println("usunStudentaZKursu");
         assertEquals(222222, instance.zwrocKurs(2).zwrocStudenta(222222).getNumerIndeksu());
@@ -58,6 +58,7 @@ public class AplikacjaTest {
     }
 
     @Test
+    @Order(5)
     public void test5dopiszStudenta() {
         System.out.println("dopiszStudenta");
         assertNull(instance.zwrocKurs(1).zwrocStudenta(333333));
@@ -66,33 +67,38 @@ public class AplikacjaTest {
     }
 
     @Test
+    @Order(6)
     public void test6szukajKursu() {
         assertTrue(instance.szukajKursu(1));
     }
 
     @Test
-    public void test7getProwadzacy() {
+    @Order(7)
+    public void test7dodajProwadzacego() {
+        System.out.println("dodajProwadzacego");
+        instance.dodajProwadzacego("Bartosz", "Szybki", "magister", 111233);
         assertEquals(111233, instance.getProwadzacy(111233).getNumerLegitymacji());
     }
 
     @Test
-    public void test8dodajKurs() {
+    @Order(8)
+    public void test8getProwadzacy() {
+        assertEquals(111233, instance.getProwadzacy(111233).getNumerLegitymacji());
+    }
+
+    @Test
+    @Order(9)
+    public void test9dodajKurs() {
         System.out.println("dodajKurs");
         instance.dodajKurs(3, "Matematyka dyskretna", 8, "Poniedziałek", "9:15", "Magda", "Koń", "profesor", 234567);
         assertEquals(3, instance.zwrocKurs(3).getIdKursu());
     }
 
     @Test
-    public void test9usunKurs() {
+    @Order(10)
+    public void test10usunKurs() {
         assertEquals(3, instance.zwrocKurs(3).getIdKursu());
         instance.usunKurs(3);
         assertNull(instance.zwrocKurs(3));
-    }
-
-    @Test
-    public void dodajProwadzacego() {
-        System.out.println("dodajProwadzacego");
-        instance.dodajProwadzacego("Bartosz", "Szybki", "magister", 111233);
-        assertEquals(111233, instance.getProwadzacy(111233).getNumerLegitymacji());
     }
 }
