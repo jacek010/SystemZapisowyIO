@@ -15,4 +15,13 @@ public class Dane {
             new Student("Kazimierz", "Grzyb", 333333),
             new Student("Filip", "Piotrowski", 444444),
     };
+
+    public String daneProwadzacych[][] = new String[][]{
+            {"Jan", "Nowak", "doktor", "123456"},
+            {"Magda", "Koń", "profesor", "234567"},
+            {"Bartosz", "Szybki", "magister", "111233"},
+            {"Marek", "Piłka", "magister", "456789"}
+    };
+
+    public int[] legitymacjeProwadzacych = {123456, 234567, 111233, 456789};
 }
