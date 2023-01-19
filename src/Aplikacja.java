@@ -84,6 +84,17 @@ public class Aplikacja {
         System.out.println("Nie udało się zapisać studenta na kurs.");
     }
 
+    public void dopiszStudenta(int idKursu, Student student) {
+        if (listaKursow.get(idKursu).getPozostaleMiejsca() > 0 && !listaKursow.get(idKursu).przeszukajListeStudentowKursu(student.getNumerIndeksu()))
+        {
+            studenciNaUczelni.add(student);
+            listaKursow.get(idKursu).dodajStudentaDoListyKursu(student);
+            System.out.println("Pomyślnie zapisano studenta na kurs.");
+            return;
+        }
+        System.out.println("Nie udało się zapisać studenta na kurs.");
+    }
+
     public void usunStudentaZKursu(int idKursu, int numerIndeksuStudenta)
     {
         if(!listaKursow.containsKey(idKursu)){

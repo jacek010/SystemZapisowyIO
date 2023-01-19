@@ -22,7 +22,7 @@ public class Prowadzacy {
     }
 
     public void setImie(String imie) {
-        imie = imie;
+        this.imie = imie;
     }
 
     public String getNazwisko() {
@@ -30,7 +30,7 @@ public class Prowadzacy {
     }
 
     public void setNazwisko(String nazwisko) {
-        nazwisko = nazwisko;
+        this.nazwisko = nazwisko;
     }
 
     public int getNumerLegitymacji() {

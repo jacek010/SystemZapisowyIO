@@ -17,6 +17,15 @@ public class Dane {
     };
 
 
+    public String daneProwadzacych[][] = new String[][]{
+            {"Jan", "Nowak", "doktor", "123456"},
+            {"Magda", "Koń", "profesor", "234567"},
+            {"Bartosz", "Szybki", "magister", "111233"},
+            {"Marek", "Piłka", "magister", "456789"}
+    };
+
+    public int[] legitymacjeProwadzacych = {123456, 234567, 111233, 456789};
+
     //int idKursu, String nazwaKursu, int liczbaMiejsc, String dzienTygodnia, String termin, String imieProwadzacego, String nazwiskoProwadzacego, String tytul, int numerLegitymacji
     public static Kurs[] daneKursow = {
             new Kurs(1,"Matematyka", 10, "Wtorek", "10:25TN","Jan" ,"Kowalski", "Doktor", 999999),

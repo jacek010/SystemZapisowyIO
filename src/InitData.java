@@ -24,7 +24,7 @@ public class InitData
 
         //zapisujemy studentów na kursy
         aplikacja.dopiszStudenta(1, "Andrzej", "Kowalski", 222222);
-        aplikacja.dopiszStudenta(1, "Franek", "Kowalczyk", 333333);
+
         aplikacja.dopiszStudenta(6, "Karolina", "Kowalska", 122234);
 
         return aplikacja;
