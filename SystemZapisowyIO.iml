@@ -34,5 +34,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="junit.platform.suite" level="application" />
+    <orderEntry type="library" name="junit.platform.launcher" level="application" />
+    <orderEntry type="library" name="junit.jupiter" level="application" />
+    <orderEntry type="library" name="junit.platform.suite.api" level="application" />
   </component>
 </module>
