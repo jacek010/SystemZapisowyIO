@@ -1,3 +1,4 @@
+package src;
 public class Prowadzacy {
     private String imie;
     private String nazwisko;

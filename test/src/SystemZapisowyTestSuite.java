@@ -1,10 +1,6 @@
-import org.junit.experimental.categories.Categories;
-import org.junit.experimental.categories.Category;
-import org.junit.jupiter.api.Tag;
+package src;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
-import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 
 //
 //@org.junit.platform.suite.api.Suite

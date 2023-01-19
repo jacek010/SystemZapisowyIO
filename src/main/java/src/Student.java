@@ -1,3 +1,4 @@
+package src;
 public class Student {
     private String imie;
     private String nazwisko;

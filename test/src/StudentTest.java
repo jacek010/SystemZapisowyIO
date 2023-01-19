@@ -1,3 +1,4 @@
+package src;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.experimental.categories.Category;

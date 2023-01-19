@@ -1,3 +1,5 @@
+package src;
+
 import org.junit.jupiter.api.*;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;

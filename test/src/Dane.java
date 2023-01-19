@@ -1,3 +1,4 @@
+package src;
 public class Dane {
 
     public String daneStudentow[][] = new String[][]{

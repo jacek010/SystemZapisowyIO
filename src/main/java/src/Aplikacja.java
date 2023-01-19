@@ -1,5 +1,7 @@
+package src;
 import java.util.*;
 import java.util.function.Consumer;
+
 
 public class Aplikacja {
 
