@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Rule;
+import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
 
@@ -32,6 +33,8 @@ class StudentTest {
 
 
     //Test do punktu 2 instrukcji lab.
+
+
     @Test
     void createStudent2(){
         System.out.println("createStudent2");
